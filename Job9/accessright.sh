@@ -8,15 +8,14 @@ for h in $(eval echo "{2..$i..1}");
 		infos[$k]=$(echo ${infos[$k]} | cut -d ' ' -f$k)
 	done
 	user[$h]=${infos[2]}"-"${infos[3]}
-	t=${infos[5]}
-	case $t in
+	case ${infos[5]} in
 		Admin*)
 			sudo useradd -m -u ${infos[1]} -p ${infos[4]} --gid root ${user[$h]}
-			echo "Rooted"
+			echo "L'utilisateur ${user[$h]}a été crée et est passé root"
 			;;
 		*)
 			sudo useradd -m -u ${infos[1]} -p ${infos[4]} ${user[$h]}
-			echo "User"
+			echo "L'utilisateur ${user[$h]} a été crée et est passé simple utilisateur"
 		;;
 	esac
 done
