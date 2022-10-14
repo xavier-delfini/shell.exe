@@ -11,11 +11,11 @@ for h in $(eval echo "{2..$i..1}");
 	t=${infos[5]}
 	case $t in
 		Admin*)
-	sudo useradd -m -u ${infos[1]} -p ${infos[4]} --gid root ${user[$h]}
+			sudo useradd -m -u ${infos[1]} -p ${infos[4]} --gid root ${user[$h]}
 			echo "Rooted"
 			;;
 		*)
-	sudo useradd -m -u ${infos[1]} -p ${infos[4]} ${user[$h]}
+			sudo useradd -m -u ${infos[1]} -p ${infos[4]} ${user[$h]}
 			echo "User"
 		;;
 	esac
